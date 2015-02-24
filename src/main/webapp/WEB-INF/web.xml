@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns="http://java.sun.com/xml/ns/javaee" xmlns:web="http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd"
+	xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd"
+	id="WebApp_ID" version="2.5">
+
+	<!-- Miejsce pliku servlet'owego -->
+	<context-param>
+		<param-name>contextConfigLocation</param-name>
+		<param-value>WEB-INF/licencingServer-servlet.xml,WEB-INF/licencingServer-security.xml</param-value>
+	</context-param>
+	
+	<!-- potrzebne do: SpringBeanAutowiringSupport i uzycia @Autowired  -->
+	<listener>
+		<listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
+	</listener>
+	
+	<display-name>licencingServer</display-name>
+
+	<servlet>
+		<servlet-name>licencingServer</servlet-name>
+		<servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
+		<load-on-startup>1</load-on-startup>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>licencingServer</servlet-name>
+		<url-pattern>*.htm</url-pattern>
+	</servlet-mapping>
+	
+    <filter>
+        <filter-name>springSecurityFilterChain</filter-name>
+        <filter-class>org.springframework.web.filter.DelegatingFilterProxy</filter-class>
+    </filter>
+
+	<filter-mapping>
+        <filter-name>springSecurityFilterChain</filter-name>
+        <url-pattern>/*</url-pattern>
+	</filter-mapping>
+	
+
+  <!-- 
+	<welcome-file-list>
+		<welcome-file>index.htm</welcome-file>
+	</welcome-file-list>
+-->	
+	<!-- Servlet WebService - Echo -->
+	<servlet>
+		<servlet-name>Echo</servlet-name>
+		<servlet-class>echo.Echo</servlet-class>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>Echo</servlet-name>
+		<url-pattern>/Echo</url-pattern>
+	</servlet-mapping>
+
+
+	<!-- Servlet WebService - CheckLicence -->
+	<servlet>
+		<servlet-name>CheckLicence</servlet-name>
+		<servlet-class>com.mateuszput.licencingserver.webservice.CheckLicence</servlet-class>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>CheckLicence</servlet-name>
+		<url-pattern>/CheckLicence</url-pattern>
+	</servlet-mapping>
+    
+    
+    <!-- hack? czy moze od razu z jar'a to pobrac? -->
+	<!-- deklaracja dodatkowych taglib'ow - skopiowane z jar'a -->
+	<jsp-config>
+		<taglib>
+        	<taglib-uri>/spring-form</taglib-uri>
+        	<taglib-location>/WEB-INF/spring-form.tld</taglib-location>
+    	</taglib>
+    	
+    	<taglib>
+        	<taglib-uri>/spring</taglib-uri>
+        	<taglib-location>/WEB-INF/spring.tld</taglib-location>
+    	</taglib>
+    	
+    	<taglib>
+        	<taglib-uri>/security</taglib-uri>
+        	<taglib-location>/WEB-INF/security.tld</taglib-location>
+    	</taglib>
+    </jsp-config>
+    
+    
+  <!-- 
+ <welcome-file-list>
+        <welcome-file>redirect.jsp</welcome-file>
+ </welcome-file-list>
+-->
+
+
+  <!-- Hibernate OpenSession Filter -->
+<!-- 
+<filter>
+	<filter-name>hibernateFilter</filter-name>
+	<filter-class>org.springframework.orm.hibernate3.support.OpenSessionInViewFilter</filter-class>
+	<init-param>
+		<param-name>singleSession</param-name>
+		<param-value>true</param-value>
+	</init-param>
+	<init-param>
+		<param-name>sessionFactoryBeanName</param-name>
+		<param-value>sessionFactory</param-value>
+	</init-param>
+</filter> 
+
+<filter-mapping>
+        <filter-name>hibernateFilter</filter-name>
+        <url-pattern>/*</url-pattern>
+</filter-mapping>
+-->
+
+
+</web-app>

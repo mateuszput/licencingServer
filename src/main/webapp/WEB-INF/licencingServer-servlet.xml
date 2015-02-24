@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+	xmlns:p="http://www.springframework.org/schema/p"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="
+http://www.springframework.org/schema/beans
+http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+http://www.springframework.org/schema/context
+http://www.springframework.org/schema/context/spring-context-3.0.xsd">
+
+	<!-- Ustawienie skanowania pakietow w poszukiwaniu adnotacji Spring -->
+	<context:component-scan base-package="com.mateuszput.licencingserver.web.controller" />
+	<context:component-scan base-package="com.mateuszput.licencingserver.webservices" />
+	
+	<!-- Konfiguracja Hibernate  -->
+	<bean id="sessionFactory" class="org.springframework.orm.hibernate3.LocalSessionFactoryBean">
+		<property name="configurationClass" value="org.hibernate.cfg.AnnotationConfiguration" />
+		<property name="configLocation" value="classpath:hibernate.cfg.xml" />
+	</bean>
+	
+	<!-- Tworzenie beanow do uzywania w aplikacji - w ApplicationContext -->
+	<!-- ownerDao uzywane w aplikacjach Springa (np. WelcomeController) -->
+	<bean id="ownerDao" class="com.mateuszput.licencingserver.dao.OwnerDAOImpl">
+		<property name="sessionFactory" ref="sessionFactory" />
+	</bean>
+	
+	<!-- blockedIPDao - sprawdzanie blokowanych adresow IP -->
+	<bean id="blockedIPDao" class="com.mateuszput.licencingserver.dao.BlockedIPDAOImpl">
+		<property name="sessionFactory" ref="sessionFactory" />
+	</bean>
+	
+	<!-- Obsluga view -->
+ <!--   <bean
+        class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+        <property name="prefix" value="/WEB-INF/jsp/" />
+        <property name="suffix" value=".jsp" />
+    </bean>
+	 -->
+	<bean id="viewResolver"
+      class="org.springframework.web.servlet.view.UrlBasedViewResolver">
+    	<property name="viewClass" value="org.springframework.web.servlet.view.JstlView"/>
+    	<property name="prefix" value="/WEB-INF/jsp/"/>
+    	<property name="suffix" value=".jsp"/>
+	</bean>
+
+	 
+	<!-- TODO: po testach: usunac pakiet vannila i odnosniki do niego -->
+<!--	
+	<bean id="userService" class="com.vaannila.service.UserServiceImpl" />
+	<context:component-scan base-package="com.vaannila.web" />
+ -->	
+	<bean class="org.springframework.web.servlet.mvc.annotation.DefaultAnnotationHandlerMapping" />
+	<bean class="org.springframework.web.servlet.mvc.annotation.AnnotationMethodHandlerAdapter" />
+	
+ <!--
+	<bean id="viewResolver"
+          class="org.springframework.web.servlet.view.InternalResourceViewResolver"
+           p:prefix="/WEB-INF/jsp/" p:suffix=".jsp" />
+
+ 
+    <bean id="userService" class="com.vaannila.service.UserServiceImpl" />
+	<bean name="/userRegistration.htm" class="com.vaannila.web.UserController" p:userService-ref="userService" p:formView="userForm" p:successView="userSuccess" />	
+-->		
+
+<!--
+<bean name="openSessionInViewInterceptor" class="org.springframework.orm.hibernate3.support.OpenSessionInViewInterceptor">
+	<property name="sessionFactory" ref="sessionFactory" />
+	<property name="singleSession" value="false" />
+</bean>	
+
+<bean id="transactionManager" class="org.springframework.orm.hibernate3.HibernateTransactionManager">
+	<property name="sessionFactory" ref="sessionFactory" />
+</bean>
+
+<bean id="openSessionInViewInterceptor"
+	class="org.springframework.orm.hibernate3.support.OpenSessionInViewInterceptor">
+	<property name="sessionFactory">
+		<ref bean="sessionFactory" />
+	</property>
+	<property name="singleSession" value="true" />
+	<property name="flushModeName">
+		<value>FLUSH_AUTO</value>
+	</property>
+
+</bean>  
+-->	
+<!-- 
+<bean name="/userRegistration.htm" class="com.vaannila.web.UserController" p:userService-ref="userService" p:formView="userForm" p:successView="userSuccess" />
+-->
+</beans>

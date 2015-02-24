@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="src" path="src/main/java"/>
+	<classpathentry kind="con" path="org.eclipse.jst.j2ee.internal.web.container"/>
+	<classpathentry kind="con" path="org.eclipse.jst.j2ee.internal.module.container"/>
+	<classpathentry kind="lib" path="/home/mapu/workspace-userLibs/Inne/com.springsource.org.apache.commons.logging-1.1.1.jar"/>
+	<classpathentry kind="lib" path="/home/mapu/workspace-userLibs/Spring framework 3.0.1.RELEASE/org.springframework.aop-3.0.1.RELEASE-A.jar"/>
+	<classpathentry kind="lib" path="/home/mapu/workspace-userLibs/Spring framework 3.0.1.RELEASE/org.springframework.asm-3.0.1.RELEASE-A.jar"/>
+	<classpathentry kind="lib" path="/home/mapu/workspace-userLibs/Spring framework 3.0.1.RELEASE/org.springframework.aspects-3.0.1.RELEASE-A.jar"/>
+	<classpathentry kind="lib" path="/home/mapu/workspace-userLibs/Spring framework 3.0.1.RELEASE/org.springframework.beans-3.0.1.RELEASE-A.jar"/>
+	<classpathentry kind="lib" path="/home/mapu/workspace-userLibs/Spring framework 3.0.1.RELEASE/org.springframework.context.support-3.0.1.RELEASE-A.jar"/>
+	<classpathentry kind="lib" path="/home/mapu/workspace-userLibs/Spring framework 3.0.1.RELEASE/org.springframework.context-3.0.1.RELEASE-A.jar"/>
+	<classpathentry kind="lib" path="/home/mapu/workspace-userLibs/Spring framework 3.0.1.RELEASE/org.springframework.core-3.0.1.RELEASE-A.jar"/>
+	<classpathentry kind="lib" path="/home/mapu/workspace-userLibs/Spring framework 3.0.1.RELEASE/org.springframework.expression-3.0.1.RELEASE-A.jar"/>
+	<classpathentry kind="lib" path="/home/mapu/workspace-userLibs/Spring framework 3.0.1.RELEASE/org.springframework.instrument.tomcat-3.0.1.RELEASE-A.jar"/>
+	<classpathentry kind="lib" path="/home/mapu/workspace-userLibs/Spring framework 3.0.1.RELEASE/org.springframework.instrument-3.0.1.RELEASE-A.jar"/>
+	<classpathentry kind="lib" path="/home/mapu/workspace-userLibs/Spring framework 3.0.1.RELEASE/org.springframework.jdbc-3.0.1.RELEASE-A.jar"/>
+	<classpathentry kind="lib" path="/home/mapu/workspace-userLibs/Spring framework 3.0.1.RELEASE/org.springframework.jms-3.0.1.RELEASE-A.jar"/>
+	<classpathentry kind="lib" path="/home/mapu/workspace-userLibs/Spring framework 3.0.1.RELEASE/org.springframework.orm-3.0.1.RELEASE-A.jar"/>
+	<classpathentry kind="lib" path="/home/mapu/workspace-userLibs/Spring framework 3.0.1.RELEASE/org.springframework.oxm-3.0.1.RELEASE-A.jar"/>
+	<classpathentry kind="lib" path="/home/mapu/workspace-userLibs/Spring framework 3.0.1.RELEASE/org.springframework.test-3.0.1.RELEASE-A.jar"/>
+	<classpathentry kind="lib" path="/home/mapu/workspace-userLibs/Spring framework 3.0.1.RELEASE/org.springframework.transaction-3.0.1.RELEASE-A.jar"/>
+	<classpathentry kind="lib" path="/home/mapu/workspace-userLibs/Spring framework 3.0.1.RELEASE/org.springframework.web.portlet-3.0.1.RELEASE-A.jar"/>
+	<classpathentry kind="lib" path="/home/mapu/workspace-userLibs/Spring framework 3.0.1.RELEASE/org.springframework.web.servlet-3.0.1.RELEASE-A.jar"/>
+	<classpathentry kind="lib" path="/home/mapu/workspace-userLibs/Spring framework 3.0.1.RELEASE/org.springframework.web.struts-3.0.1.RELEASE-A.jar"/>
+	<classpathentry kind="lib" path="/home/mapu/workspace-userLibs/Spring framework 3.0.1.RELEASE/org.springframework.web-3.0.1.RELEASE-A.jar"/>
+	<classpathentry kind="lib" path="/home/mapu/workspace-userLibs/Hibernate Annotation 3.4.0.GA/ejb3-persistence.jar"/>
+	<classpathentry kind="lib" path="/home/mapu/workspace-userLibs/Hibernate Annotation 3.4.0.GA/hibernate-annotations.jar"/>
+	<classpathentry kind="lib" path="/home/mapu/workspace-userLibs/Hibernate Annotation 3.4.0.GA/hibernate-commons-annotations.jar"/>
+	<classpathentry kind="lib" path="/home/mapu/workspace-userLibs/Hibernate Annotation 3.4.0.GA/slf4j-api.jar"/>
+	<classpathentry kind="lib" path="/home/mapu/workspace-userLibs/Hibernate Core 3.3.2.GA/antlr-2.7.6.jar"/>
+	<classpathentry kind="lib" path="/home/mapu/workspace-userLibs/Hibernate Core 3.3.2.GA/commons-collections-3.1.jar"/>
+	<classpathentry kind="lib" path="/home/mapu/workspace-userLibs/Hibernate Core 3.3.2.GA/dom4j-1.6.1.jar"/>
+	<classpathentry kind="lib" path="/home/mapu/workspace-userLibs/Hibernate Core 3.3.2.GA/hibernate3.jar"/>
+	<classpathentry kind="lib" path="/home/mapu/workspace-userLibs/Hibernate Core 3.3.2.GA/javassist-3.9.0.GA.jar"/>
+	<classpathentry kind="lib" path="/home/mapu/workspace-userLibs/Hibernate Core 3.3.2.GA/jta-1.1.jar"/>
+	<classpathentry kind="lib" path="/home/mapu/workspace-userLibs/Hibernate Core 3.3.2.GA/slf4j-api-1.5.8.jar"/>
+	<classpathentry kind="lib" path="/home/mapu/workspace-userLibs/Hibernate Core 3.3.2.GA/slf4j-simple-1.5.8.jar"/>
+	<classpathentry kind="lib" path="/home/mapu/workspace-userLibs/jstl-1.2.jar"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry kind="lib" path="/home/mapu/workspace-userLibs/servlet-api-2.5-6.0.2.jar"/>
+	<classpathentry kind="lib" path="/home/mapu/workspace-userLibs/spring-security-taglibs-2.0.5.RELEASE.jar"/>
+	<classpathentry kind="output" path="src/main/webapp/WEB-INF/classes"/>
+</classpath>
